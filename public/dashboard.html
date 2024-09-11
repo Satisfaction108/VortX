@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <img id="profile-pic" src="" alt="Profile Picture" width="100">
+    <p id="username"></p>
+    <a href="/logout" class="logout-button">Logout</a>
 
+    <script>
+        async function fetchUserData() {
+            const response = await fetch('/api/user');
+            const user = await response.json();
+
+            document.getElementById('profile-pic').src = user.avatar ? 'https://cdn.discordapp.com/avatars/' + user.id + '/' + user.avatar + '.png' : 'https://cdn.discordapp.com/embed/avatars/0.png';
+            document.getElementById('username').textContent = user.username;
+        }
+
+        fetchUserData();
+    </script>
+</body>
+</html>
