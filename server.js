@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  const authURL = `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code&scope=identify`;
+  const authURL = 'https://discord.com/oauth2/authorize?client_id=1283103158012219455&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback&scope=identify';
   res.redirect(authURL);
 });
 
