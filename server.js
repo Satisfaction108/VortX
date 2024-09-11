@@ -4,8 +4,8 @@ const cookieSession = require('cookie-session');
 const app = express();
 const path = require('path');
 
-const CLIENT_ID = 'YOUR_DISCORD_CLIENT_ID';
-const CLIENT_SECRET = 'YOUR_DISCORD_CLIENT_SECRET';
+const CLIENT_ID = '1283103158012219455';
+const CLIENT_SECRET = 'cD87ozdWgQqaPhqtcH6_Ji7hkUMZVZLq';
 const REDIRECT_URI = 'http://localhost:3000/callback';
 
 app.use(express.static(path.join(__dirname, 'public')));
