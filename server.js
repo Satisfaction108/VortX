@@ -1,8 +1,8 @@
 const express = require('express');
 const axios = require('axios');
 const cookieSession = require('cookie-session');
-const app = express();
 const path = require('path');
+const app = express();
 
 // Your Discord credentials
 const CLIENT_ID = '1283103158012219455';
@@ -13,7 +13,7 @@ const REDIRECT_URI = 'http://localhost:3000/callback';
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000, // Session lasts 24 hours
-  keys: [DiscordAutoVorXSecretKey] // Replace 'your_secret_key' with a strong, random key
+  keys: ['your_secret_key'] // Replace 'your_secret_key' with a strong, random key
 }));
 
 // Route for the homepage
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 // Route to initiate Discord login
 app.get('/login', (req, res) => {
   // Redirect user to Discord OAuth2 authorization page
-  const authURL = 'https://discord.com/oauth2/authorize?client_id=1283103158012219455&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fcallback&scope=identify';
+  const authURL = `https://discord.com/oauth2/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&scope=identify`;
   res.redirect(authURL);
 });
 
@@ -79,4 +79,6 @@ app.get('/logout', (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+app.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
+});
