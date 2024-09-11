@@ -1,1 +1,15 @@
+{
+  "name": "discord-auth",
+  "version": "1.0.0",
+  "description": "A simple project to demonstrate Discord OAuth2 authentication.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "axios": "^1.3.0",
+    "cookie-session": "^1.4.0"
+  }
+}
 
