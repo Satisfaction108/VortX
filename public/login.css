@@ -1,1 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #2C2F33;
+    color: white;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+.login-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #7289DA;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.login-button:hover {
+    background-color: #5B6EAE;
+}
 
